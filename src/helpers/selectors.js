@@ -1,5 +1,3 @@
-import React from "react";
-
 export function getAppointmentsForDay(state, day) {
   let result = [];
   for (let each of state.days) {
