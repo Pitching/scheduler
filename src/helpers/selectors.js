@@ -3,9 +3,19 @@ export function getAppointmentsForDay(state, day) {
   for (let each of state.days) {
     if (each.name === day) {
       for (let appointment of each.appointments) {
-        if (appointment === state.appointments[appointment].id) {
-          result.push(state.appointments[appointment]);
-        }
+        result.push(state.appointments[appointment]);
+      }
+    }
+  }
+  return result;
+}
+
+export function getInterviewersForDay(state, day) {
+  let result = [];
+  for (let each of state.days) {
+    if (each.name === day) {
+      for (let interviewer of each.interviewers) {
+        result.push(state.interviewers[interviewer])
       }
     }
   }
