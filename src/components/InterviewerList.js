@@ -6,7 +6,7 @@ function InterviewerList(props) {
   const listInterviewers = props.interviewers.map((current) => {
     return (
       <InterviewerListItem
-        key={current.key}
+        key={current.id}
         avatar={current.avatar}
         name={current.name}
         selected={current.id === props.value}
