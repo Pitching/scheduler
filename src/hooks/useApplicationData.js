@@ -66,6 +66,5 @@ export function useApplicationData() {
   }, [])
 
   const setDay = day => setState({ ...state, day });
-  console.log(state);
   return { state, setDay, bookInterview, deleteInterview };
 }
