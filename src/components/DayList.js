@@ -1,6 +1,7 @@
 import React from "react";
 import DayListItem from "./DayListItem";
 
+// Daylist component, renders all days from a given prop and maps each into a DayListItem (displays M-F on the left)
 export default function DayList (props) {
   const listDays = props.days.map((current) => {
     return (
@@ -19,4 +20,4 @@ export default function DayList (props) {
       {listDays}
     </ul>
   );
-}
+};

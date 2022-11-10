@@ -1,5 +1,6 @@
 import React from "react";
 
+// Empty component, used to show that there is no appointment for that specific time frame with a "+" image
 export default function Empty(props) {
   return (
     <main className="appointment__add">
@@ -11,4 +12,4 @@ export default function Empty(props) {
       />
     </main>
   )
-}
+};

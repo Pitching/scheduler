@@ -7,6 +7,7 @@ import Appointment from "components/Appointment";
 import { useApplicationData } from "hooks/useApplicationData";
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 
+// Application component, retrieves state values from useApplicationData hook
 export default function Application() {
   const {
     state,
@@ -15,6 +16,7 @@ export default function Application() {
     deleteInterview
   } = useApplicationData();
 
+  // Retrieves all the appointments and interviewers for the selected day and maps each into an Appointment component
   const dailyAppointments = getAppointmentsForDay(state, state.day);
   const dailyInterviewers = getInterviewersForDay(state, state.day);
 
@@ -31,8 +33,8 @@ export default function Application() {
         bookInterview={bookInterview}
         deleteInterview={deleteInterview}
       />
-    )
-  })
+    );
+  });
 
   return (
     <main className="layout">
@@ -62,4 +64,4 @@ export default function Application() {
       </section>
     </main>
   );
-}
+};

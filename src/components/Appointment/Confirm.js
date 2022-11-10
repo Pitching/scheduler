@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "components/Button";
 
+// Confirm component, used to display if the user wants to go ahead and delete an appointment
 export default function Confirm(props) {
   return (
     <main className="appointment__card appointment__card--confirm">
@@ -11,4 +12,4 @@ export default function Confirm(props) {
       </section>
     </main>
   )
-}
+};

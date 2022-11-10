@@ -3,6 +3,7 @@ import "components/InterviewerList.scss";
 import InterviewerListItem from "./InterviewerListItem";
 import PropTypes from 'prop-types';
 
+// InterviewerList component, grabs interviewers object from a given prop and maps each interviewer into its own interviewer icon
 function InterviewerList(props) {
   const listInterviewers = props.interviewers.map((current) => {
     return (
@@ -24,8 +25,8 @@ function InterviewerList(props) {
         {listInterviewers}
       </ul>
     </section>
-  )
-}
+  );
+};
 
 InterviewerList.propTypes = { interviewers: PropTypes.array.isRequired };
 

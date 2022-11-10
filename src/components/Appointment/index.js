@@ -19,11 +19,13 @@ const EDIT = "EDIT";
 const ERROR_SAVE = "ERROR_SAVE";
 const ERROR_DELETE = "ERROR_DELETE";
 
+// Appointment component, used to pick the various states the appointment could be in
 export default function Appointment (props) {
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
 
+  // Function to transition the state to the saving screen, update the name/interviewer, and catch and display an error
   function save(name, interviewer) {
     transition(SAVING);
     const interview = {
@@ -33,14 +35,15 @@ export default function Appointment (props) {
     props.bookInterview(props.id, interview)
       .then(() => transition(SHOW))
       .catch(() => transition(ERROR_SAVE, true))
-  }
+  };
 
+  // Function to delete the interview and catch and display an error
   function destroy() {
     transition(DELETE, true);
     props.deleteInterview(props.id)
       .then(() => transition(EMPTY))
-      .catch(() => transition(ERROR_DELETE, true))
-  }
+      .catch(() => transition(ERROR_DELETE, true));
+  };
 
   return (
     <article className="appointment" data-testid="appointment">
@@ -55,5 +58,5 @@ export default function Appointment (props) {
       {mode === ERROR_SAVE && <Error message="An error has occurred saving the appointment." onClose={back}/>}
       {mode === ERROR_DELETE && <Error message="An error has occurred deleting the appointment." onClose={back}/>}
     </article>
-  )
-}
+  );
+};

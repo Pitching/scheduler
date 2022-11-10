@@ -7,8 +7,9 @@ export function useApplicationData() {
     days: [],
     appointments: {},
     interviewers: {}
-  })
+  });
 
+  // Function used to update in real time the remaining spots for each day if an interview is booked
   const updateSpots = function (appointments, days) {
     let spots = 0;
     const day = days.find(ind => ind.name === state.day);
@@ -16,13 +17,14 @@ export function useApplicationData() {
       let appointment = appointments[appointmentID];
       if (appointment && !appointment.interview) {
         spots++;
-      }
-    }
+      };
+    };
     let newDay = {...day, spots};
     const newDayArr = days.map((each) => each.name === state.day ? newDay : each);
     return newDayArr;
-  }
+  };
 
+  // Function used to make a put axios request to the appointments list in the database at the given ID and update the state with the new interview
   function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -35,10 +37,11 @@ export function useApplicationData() {
     return axios.put(`http://localhost:8001/api/appointments/${id}`, appointment)
       .then(() => {
         const days = updateSpots(appointments, state.days);
-        setState({ ...state, days, appointments })
-      })
-  }
+        setState({ ...state, days, appointments });
+      });
+  };
 
+  // Function used to make an axios delete reqeust to the appointments list in the database at the given ID and update the state with the deleted interview
   function deleteInterview(id) {
     const appointment = {
       ...state.appointments[id],
@@ -51,10 +54,11 @@ export function useApplicationData() {
     return axios.delete(`http://localhost:8001/api/appointments/${id}`)
       .then(() => {
         const days = updateSpots(appointments, state.days);
-        setState({ ...state, days, appointments })
-      })
-  }
+        setState({ ...state, days, appointments });
+      });
+  };
 
+  // Update the appointments list with the information from the database
   useEffect(() => {
     Promise.all([
       axios.get("http://localhost:8001/api/days"),
@@ -63,8 +67,8 @@ export function useApplicationData() {
     ]).then(all => {
       setState(prev => ({ ...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data }))
     })
-  }, [])
+  }, []);
 
   const setDay = day => setState({ ...state, day });
   return { state, setDay, bookInterview, deleteInterview };
-}
+};

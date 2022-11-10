@@ -1,5 +1,6 @@
 import React from "react";
 
+// Status component, used to display the loading status with a message prop passed down
 export default function Status(props) {
   return (
     <main className="appointment__card appointment__card--status">
@@ -10,5 +11,5 @@ export default function Status(props) {
       />
       <h1 className="text--semi-bold">{props.message}</h1>
     </main>
-  )
-}
+  );
+};

@@ -1,5 +1,6 @@
 import React from "react";
 
+// Error component, used to display the error message passed as a prop if there are issues editing/deleting the appointment
 export default function Error(props) {
   return (
     <main className="appointment__card appointment__card--error">
@@ -14,5 +15,5 @@ export default function Error(props) {
         onClick={props.onClose}
       />
     </main>
-  )
-}
+  );
+};

@@ -1,5 +1,6 @@
 import React from "react";
 
+// Show component, used to display the booked appointments on the page and allow for callback functions on edit/delete selection
 export default function Show(props) {
   return (
     <main className="appointment__card appointment__card--show">
@@ -27,5 +28,5 @@ export default function Show(props) {
         </section>
       </section>
     </main>
-  )
-}
+  );
+};
