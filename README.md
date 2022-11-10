@@ -2,6 +2,13 @@
 
 Project using React and an API database to update real time actions taken by the user to book, edit, and delete appointments with a set list of interviewers per day.
 
+## Features
+
+- Book appointments on any of the given days
+- Edit existing appointments in real time
+- Delete existing appointments
+- Care-free tracking of info via API database!
+
 ## Initial View
 !["Initial view of the interviewer scheduler app"](https://github.com/Pitching/scheduler/blob/master/images/initial-view.png?raw=true)
 
