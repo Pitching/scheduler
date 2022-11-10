@@ -1,5 +1,7 @@
 # Interview Scheduler
 
+Project using React and an API database to update real time actions taken by the user to book, edit, and delete appointments with a set list of interviewers per day.
+
 ## Setup
 
 Install dependencies with `npm install`.
@@ -21,3 +23,10 @@ npm test
 ```sh
 npm run storybook
 ```
+## Dependencies and technologies
+
+Axios
+Classnames
+React
+Cypress
+React-hooks testing library
