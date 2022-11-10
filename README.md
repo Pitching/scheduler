@@ -9,6 +9,17 @@ Project using React and an API database to update real time actions taken by the
 - Delete existing appointments
 - Care-free tracking of info via API database!
 
+## Set-up
+
+- git-clone the project.
+- Install dependencies with npm install.
+
+## Testing
+
+- To run the Jest Tests, use npm test.
+- To run the Storybook Testbed, use npm run storybook.
+- To run Cypress Tests, use npm run cypress.
+
 ## Initial View
 !["Initial view of the interviewer scheduler app"](https://github.com/Pitching/scheduler/blob/master/images/initial-view.png?raw=true)
 
