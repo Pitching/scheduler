@@ -34,8 +34,8 @@ npm run storybook
 ```
 ## Dependencies and technologies
 
-Axios
-Classnames
-React
-Cypress
-React-hooks testing library
+Axios  
+Classnames  
+React  
+Cypress  
+React-hooks testing library  
