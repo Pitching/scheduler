@@ -27,14 +27,14 @@ export default function Appointment (props) {
 
   // Function to transition the state to the saving screen, update the name/interviewer, and catch and display an error
   function save(name, interviewer) {
-    transition(SAVING);
     const interview = {
       student: name,
       interviewer
     };
+    transition(SAVING);
     props.bookInterview(props.id, interview)
-      .then(() => transition(SHOW))
-      .catch(() => transition(ERROR_SAVE, true))
+    .then(() => transition(SHOW))
+    .catch(() => transition(ERROR_SAVE, true))
   };
 
   // Function to delete the interview and catch and display an error
