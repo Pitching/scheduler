@@ -14,6 +14,8 @@ Project using React and an API database to update real time actions taken by the
 - ```git clone``` the project.
 - Install dependencies with ```npm install```.
 - Run the development server with ```npm start```.
+- Fork and Clone the scheduler-api database (https://github.com/Pitching/scheduler-api)
+- Install scheduler-api dependencies with ```npm install```
 
 ## Testing
 
